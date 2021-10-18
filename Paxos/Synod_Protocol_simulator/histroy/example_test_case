@@ -1,0 +1,36 @@
+initialize 3 nodes
+// node 3 starts a proposal
+at 1001 send prepare request from 3
+// deliver all three prepare requests, each triggering a response
+
+at 1002 deliver prepare request message to 2 from time 1001
+at 1003 deliver prepare request message to 3 from time 1001
+at 1004 deliver prepare request message to 1 from time 1001
+
+// deliver the first prepare response
+at 1005 deliver prepare response message to 3 from time 1002
+// two responses is a majority so the second will trigger accept requests
+at 1006 deliver prepare response message to 3 from time 1003
+
+// deliver the third response, which will not affect the outcome
+at 1007 deliver prepare response message to 3 from time 1004
+// deliver all three accept requests, each triggering a reponse
+at 1008 deliver accept request message to 3 from time 1006
+
+// at the moment the second acceptor votes in favor, consensus has been achieved
+at 1009 deliver accept request message to 1 from time 1006
+at 1010 deliver accept request message to 2 from time 1006
+
+// deliver the first accept response
+at 1011 deliver accept response message to 3 from time 1008
+// at the moment the second acceptor vote is counted,
+// consensus has been discovered by the proposer
+// and decide requests will be sent out
+at 1012 deliver accept response message to 3 from time 1009
+// deliver the third response, which will not affect the outcome
+at 1013 deliver accept response message to 3 from time 1010
+// deliver all three decide requests
+// nodes can act on the decision when they receive these requests
+at 1014 deliver decide request message to 1 from time 1012
+at 1015 deliver decide request message to 2 from time 1012
+at 1016 deliver decide request message to 3 from time 1012

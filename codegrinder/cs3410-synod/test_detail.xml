@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuites tests="3" failures="0" disabled="0" skipped="0" errors="0" time="0.022829055786132812"><testsuite tests="3" failures="0" disabled="0" skipped="0" errors="0" time="0.022829055786132812"><testcase name="inputs/1-simple-single-proposer.input" time="0.008581876754760742" /><testcase name="inputs/2-first-proposer-fails-second-takes-over.input" time="0.007502079010009766" /><testcase name="inputs/3-dualing-proposers.input" time="0.008107900619506836" /></testsuite></testsuites>
