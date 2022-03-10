@@ -1,5 +1,4 @@
-# CS-3410
-## Distributed Systems
+## Distributed System Models in Go
 ### peer-to-peer | concurrency > MUD
 ### containers > Chord
 ### consensus > Paxos
